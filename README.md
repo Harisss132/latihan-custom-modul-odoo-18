@@ -1,0 +1,1 @@
+ini merupakan hasil latihan untuk membuat custom modul odoo saya, saya akan update terus untuk hasil latihan custom modul saya jadi pantengin aja
