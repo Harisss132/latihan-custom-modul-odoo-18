@@ -11,6 +11,19 @@ class InventoryItem(models.Model):
     stock = fields.Integer(string='Stok', default=0)
     price = fields.Float(string='Harga per Unit')
     description = fields.Text(string='Deskripsi Barang')
+    
+    supplier_id = fields.Many2one('inventory.supplier', string='Supplier')
+    
+    total_value = fields.Float(
+        string='Total Value',
+        compute='_compute_total_value',
+        store=True
+    )
+    
+    @api.depends('stock', 'price')
+    def _compute_total_value(self):
+        for record in self:
+            record.total_value = record.stock * record.price
 
     def update_stock(self):
         """Fungsi untuk update stok barang"""

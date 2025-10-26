@@ -1,0 +1,59 @@
+<odoo>
+    <!-- action harus di atas -->
+    <record id="action_inventory_supplier" model="ir.actions.act_window">
+        <field name="name">Suppliers</field>
+        <field name="res_model">inventory.supplier</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- ini root menu harus di tulis -->
+    <menuitem id="menu_inventory_root" name="Inventory Management"/>
+
+    <!-- submenu untuk view inventory_supplier -->
+    <menuitem id="menu_inventory_supplier" name="Supplier" parent="menu_inventory_root" action="action_inventory_supplier"/>
+
+    <!-- ini list view untuk inventory supplier -->
+    <record id="view_inventory_supplier_list" model="ir.ui.view">
+        <field name="name">inventory.supplier.list</field>
+        <field name="model">inventory.supplier</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- form view inventory supplier -->
+    <record id="view_inventory_supplier_form" model="ir.ui.view">
+        <field name="name">inventory.supplier.form</field>
+        <field name="model">inventory.supplier</field>
+        <field name="arch" type="xml">
+            <form string="Supplier">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="address"/>
+                    </group>
+                    <notebook>
+                        <page string="Items">
+                            <field name="item_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="stock"/>
+                                    <field name="price"/>
+                                    <field name="total_value"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

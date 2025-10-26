@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_inventory_item,access_inventory_item,model_inventory_item,base.group_user,1,1,1,1
+access_inventory_supplier_user,access.inventory.supplier.user,model_inventory_supplier,base.group_user,1,1,1,1
+access_inventory_purchase_order,access_inventory_purchase_order,model_inventory_purchase_order,base.group_user,1,1,1,1
+access_inventory_purchase_order_line,access_inventory_purchase_order_line,model_inventory_purchase_order_line,base.group_user,1,1,1,1

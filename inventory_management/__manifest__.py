@@ -8,6 +8,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/inventory_item_views.xml',
+        'views/inventory_supplier_views.xml',
+        'views/inventory_purchase_order_views.xml'
     ],
     'installable': True,
     'application': True,
